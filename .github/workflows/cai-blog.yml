@@ -1,0 +1,35 @@
+name: Cài đặt blog
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lấy dữ liệu repository
+        uses: actions/checkout@v4
+
+      - name: Giải nén blog
+        run: |
+          if [ -f mybio-github-pages.zip ]; then
+            unzip -o mybio-github-pages.zip -d temp
+            cp -a temp/github-blog/. .
+            rm -rf temp
+            rm mybio-github-pages.zip
+          fi
+
+      - name: Lưu các file blog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Cài đặt blog GitHub Pages"
+            git push
+          fi
