@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | escape }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <nav class="topnav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">Góc nhỏ của Thành</a>
+      <div class="navlinks">
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/cv/' | relative_url }}">CV</a>
+        <a href="https://app.pagescms.org" target="_blank" rel="noopener">Viết bài</a>
+      </div>
+    </div>
+  </nav>
+  <main class="wrap">{{ content }}</main>
+  <footer class="wrap">© 2026 — góc nhỏ của Thành. viết chậm, sống chậm hơn một chút.</footer>
+</body>
+</html>
+

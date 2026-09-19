@@ -1,0 +1,8 @@
+title: Góc nhỏ của Thành
+description: Nhật ký của một đứa hướng nội
+lang: vi
+timezone: Asia/Ho_Chi_Minh
+url: https://thanhqn9895.github.io
+baseurl: /mybio
+permalink: /blog/:title/
+markdown: kramdown

@@ -1,0 +1,19 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<header class="hero compact"><span class="eyebrow">tất cả những lá thư đã gửi</span><h1>Blog</h1></header>
+<section class="no-line">
+  <div class="posts-grid">
+    {% for post in site.posts %}
+      <a class="postcard" href="{{ post.url | relative_url }}">
+        {% if post.cover %}<img class="card-cover" src="{{ post.cover | relative_url }}" alt="">{% endif %}
+        <div class="post-date">{{ post.date | date: '%d/%m/%Y' }}</div>
+        <h3>{{ post.title }}</h3><p>{{ post.excerpt }}</p>
+        <div class="post-tags">{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+

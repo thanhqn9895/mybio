@@ -1,0 +1,40 @@
+---
+layout: default
+title:
+---
+<header class="hero">
+  <span class="eyebrow">một góc yên tĩnh trên internet ⋆｡°✩</span>
+  <h1>Nhật ký của<br>một đứa <span>hướng nội</span></h1>
+  <p class="lede">Chào bạn, mình là Thành — dân QC ở Quảng Ninh, từng lăn lộn với IT một dạo. Ngày thì soi lỗi sản phẩm, tối thì trốn vào anime, FGO và vài trang thư viết dở trên Slowly.</p>
+  <div class="kalimba"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</header>
+
+<section>
+  <span class="section-label">giới thiệu qua loa</span>
+  <h2>Vài dòng về mình</h2>
+  <p class="muted">Mình là kiểu người thích một buổi tối yên tĩnh hơn một bữa tiệc đông người — không phải vì ghét ai, chỉ là pin xã hội của mình sạc chậm lắm (￣▽￣)ゞ.</p>
+  <div class="tag-row"><span>FGO</span><span>Manga & Anime</span><span>Fujii Kaze</span><span>Ghibli</span><span>Slowly pen-pal</span></div>
+</section>
+
+<section>
+  <span class="section-label">những gì gần đây mình viết</span>
+  <h2>Bài viết mới nhất</h2>
+  <div class="posts-grid">
+    {% for post in site.posts limit:3 %}
+      <a class="postcard" href="{{ post.url | relative_url }}">
+        {% if post.cover %}<img class="card-cover" src="{{ post.cover | relative_url }}" alt="">{% endif %}
+        <div class="post-date">{{ post.date | date: '%d/%m/%Y' }}</div>
+        <h3>{{ post.title }}</h3><p>{{ post.excerpt }}</p>
+        <div class="post-tags">{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+      </a>
+    {% endfor %}
+  </div>
+  <p><a class="back-link" href="{{ '/blog/' | relative_url }}">→ Xem tất cả bài viết</a></p>
+</section>
+
+<section>
+  <span class="section-label">gửi thư cho mình</span>
+  <h2>Nếu bạn cũng thích viết chậm</h2>
+  <div class="letterbox"><p>Mình không giỏi mở lời trước, nhưng nếu bạn cũng thích viết dài, thích kể chuyện qua từng dòng chữ — có lẽ tụi mình hợp làm bạn thư.</p><span class="sign-off">hẹn gặp trong lá thư tiếp theo, Thành ✎</span></div>
+</section>
+
